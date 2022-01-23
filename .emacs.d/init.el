@@ -3,8 +3,14 @@
 (scroll-bar-mode 0)
 (tool-bar-mode 0)
 (tooltip-mode 0)
-(column-number-mode 1)
 (menu-bar-mode 0)
+
+(setq split-width-threshold nil)
+
+
+;; LINE NUMBERS - relative
+(column-number-mode 1)
+(global-display-line-numbers-mode)
 
 (ido-mode 1) ; IDO
 (ido-everywhere 1)
@@ -37,6 +43,9 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+;; HIGHLIGHT PARENTHESES
+(require 'highlight-parentheses)
+(global-highlight-parentheses-mode)
 
 ;; DIRED
 (require 'dired-x)
@@ -50,8 +59,17 @@
   (interactive)
   (toggle-word-wrap 1))
 
+;; DIRED
+(require 'dired-x)
+(setq dired-omit-files
+      (concat dired-omit-files "\\|^\\..+$"))
+(setq-default dired-dwim-target t)
+(setq dired-listing-switches "-alh")
 
-
+;; WORD-WRAP
+(defun rc/enable-word-wrap ()
+  (interactive)
+  (toggle-word-wrap 1))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -61,6 +79,9 @@
  '(custom-safe-themes
    '("3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" default))
  '(display-line-numbers-type 'relative)
+ '(package-selected-packages
+   '(highlight-parentheses use-package smex gruber-darker-theme))
+ '(split-width-threshold nil)
  '(whitespace-style
    '(face tabs spaces trailing space-before-tab newline indentation empty space-after-tab space-mark tab-mark)))
 (custom-set-faces
