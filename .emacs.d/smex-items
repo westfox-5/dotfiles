@@ -1,0 +1,17 @@
+
+;; ----- smex-history -----
+(
+ compile
+ shell
+ cd
+ 5x5
+ arp
+ dbx
+ dig
+)
+
+;; ----- smex-data -----
+(
+ (shell . 1)
+ (compile . 2)
+)
