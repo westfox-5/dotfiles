@@ -7,10 +7,15 @@
 
 (setq split-width-threshold nil)
 
+(setq-default tab-width 4)
+(setq-default c-basic-offset 4)
 
 ;; LINE NUMBERS - relative
 (column-number-mode 1)
 (global-display-line-numbers-mode)
+
+;; disable graphical timeout
+(global-unset-key (kbd "C-z"))
 
 (ido-mode 1) ; IDO
 (ido-everywhere 1)
@@ -21,9 +26,8 @@
 ;; Move Backups in different folder
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
 
-
 ;; FONT
-(set-face-attribute 'default nil :font "Fira Code Retina" :height 120)
+(set-face-attribute 'default nil :font "Fira Code Retina" :height 150)
 
 ;; THEME
 (load-theme 'gruber-darker t)

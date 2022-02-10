@@ -186,3 +186,6 @@ exec nitrogen --restore
 
 # Lockscreen
 bindsym $mod+x exec i3lock -c 000000
+
+# enable tabbed mode
+workspace_layout tabbed 
