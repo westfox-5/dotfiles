@@ -30,6 +30,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Multi-monitor configuration.
+# List available monitors with: 
+#	xrands --listmonitors
+exec --no-startup-id xrandr --output DP-2 --auto --primary --right-of HDMI-0 &
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -178,7 +183,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status -c /home/westfox/.config/i3/i3status.conf
+#	status_command i3blocks
+#	i3bar_command i3bar
+#	position bottom
+    status_command i3status -c ~/dotfiles/.config/i3/i3status.conf
 }
 
 # Wallpaper
@@ -186,6 +194,11 @@ exec nitrogen --restore
 
 # Lockscreen
 bindsym $mod+x exec i3lock -c 000000
-
 # enable tabbed mode
 workspace_layout tabbed 
+
+
+### NOTES
+
+# better terminal:
+#	sudo apt install terminator

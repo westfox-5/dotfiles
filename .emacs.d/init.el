@@ -20,23 +20,27 @@
 (ido-mode 1) ; IDO
 (ido-everywhere 1)
 
-(require 'smex)
-(global-set-key (kbd "M-x") 'smex)
-
 ;; Move Backups in different folder
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
 
 ;; FONT
 (set-face-attribute 'default nil :font "Fira Code Retina" :height 150)
 
-;; THEME
-(load-theme 'gruber-darker t)
-
-;; MELPA CONFIG
+;; MELPA CONFIG -- must be before every package configuration!
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
 			 ("elpa" . "https://elpa.gnu.org/packages/")))
+
+;; THEME
+(require 'package)
+(add-to-list 'package-archives
+			 '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(load-theme 'gruber-darker t)
+
+; SMEX
+(require 'smex)
+(global-set-key (kbd "M-x") 'smex)
 
 (package-initialize)
 (unless package-archive-contents
@@ -84,7 +88,7 @@
    '("3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" default))
  '(display-line-numbers-type 'relative)
  '(package-selected-packages
-   '(highlight-parentheses use-package smex gruber-darker-theme))
+   '(magit highlight-parentheses use-package smex gruber-darker-theme))
  '(split-width-threshold nil)
  '(whitespace-style
    '(face tabs spaces trailing space-before-tab newline indentation empty space-after-tab space-mark tab-mark)))
