@@ -1,0 +1,12 @@
+# RCLONE
+
+cp rclone.service /etc/systemd/system
+
+
+## change rclone.service file in order to point to the desired directory.
+## in my case I have gdrive-unive in home dir.
+
+systemctl daemon-reload
+
+systemctl start rclone.service
+

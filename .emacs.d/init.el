@@ -7,8 +7,8 @@
 
 (setq split-width-threshold nil)
 
-(setq-default tab-width 4)
-(setq-default c-basic-offset 4)
+(setq-default tab-width 2)
+(setq-default c-basic-offset 2)
 
 ;; LINE NUMBERS - relative
 (column-number-mode 1)
@@ -24,7 +24,7 @@
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
 
 ;; FONT
-(set-face-attribute 'default nil :font "Fira Code Retina" :height 150)
+(set-face-attribute 'default nil :font "Fira Code Retina" :height 130)
 
 ;; MELPA CONFIG -- must be before every package configuration!
 (require 'package)
@@ -67,17 +67,9 @@
   (interactive)
   (toggle-word-wrap 1))
 
-;; DIRED
-(require 'dired-x)
-(setq dired-omit-files
-      (concat dired-omit-files "\\|^\\..+$"))
-(setq-default dired-dwim-target t)
-(setq dired-listing-switches "-alh")
-
-;; WORD-WRAP
-(defun rc/enable-word-wrap ()
-  (interactive)
-  (toggle-word-wrap 1))
+;; MULTIPLE CURSORS
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c m c") 'mc/edit-lines)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -88,7 +80,7 @@
    '("3d2e532b010eeb2f5e09c79f0b3a277bfc268ca91a59cdda7ffd056b868a03bc" default))
  '(display-line-numbers-type 'relative)
  '(package-selected-packages
-   '(magit highlight-parentheses use-package smex gruber-darker-theme))
+   '(multiple-cursors company magit highlight-parentheses use-package smex gruber-darker-theme))
  '(split-width-threshold nil)
  '(whitespace-style
    '(face tabs spaces trailing space-before-tab newline indentation empty space-after-tab space-mark tab-mark)))

@@ -1,0 +1,16 @@
+[Unit]
+Description=Google Drive - UNIVE (rclone)
+AssertPathIsDirectory=/home/westfox5/gdrive-unive
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount drive: /home/westfox5/gdrive-unive \
+        --config=/home/westfox5/.config/rclone/rclone.conf \
+        --allow-other \
+        --drive-use-trash
+ExecStop=/bin/fusermount -u /home/westfox5/gdrive-unive
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
