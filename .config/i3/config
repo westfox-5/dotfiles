@@ -223,5 +223,17 @@ bindsym --release Control+Print exec --no-startup-id "$HOME/.config/i3/screensho
 
 ### NOTES
 
+# nvidia-driver:
+#	add in /etc/apt/sources.list:
+#		deb http://deb.debian.org/debian/ bullseye-backports main contrib non-free
+#	sudo apt update
+#	sudo apt install -t bullseye-backports nvidia-driver
+
 # better terminal:
 #	sudo apt install terminator
+
+# filemanager:
+#	sudo apt install pcmanfm
+
+# audio:
+#	sudo apt install pulseaudio pavucontrol
