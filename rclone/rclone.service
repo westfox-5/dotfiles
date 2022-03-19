@@ -4,6 +4,7 @@ AssertPathIsDirectory=/home/westfox5/gdrive-unive
 
 [Service]
 Type=simple
+User=westfox5
 ExecStart=/usr/bin/rclone mount drive: /home/westfox5/gdrive-unive \
         --config=/home/westfox5/.config/rclone/rclone.conf \
         --allow-other \
