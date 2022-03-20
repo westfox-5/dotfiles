@@ -6,6 +6,10 @@ cp rclone.service /etc/systemd/system
 ## change rclone.service file in order to point to the desired directory.
 ## in my case I have gdrive-unive in home dir.
 
+nano /etc/fuse.conf
+# remove comment before
+#user_allow_other
+
 systemctl daemon-reload
 
 systemctl start rclone.service
