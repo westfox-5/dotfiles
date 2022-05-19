@@ -31,4 +31,16 @@ $> # for each plugin missing, install it and restart emacs
 $> M-x package-install RET <plugin name>
 ```
 
+---
+## RCLONE
+Rclone is configured to access a specific google drive location.
+
+```console
+# change rclone.service file in order to point to the desired directory
+$> sudo cp rclone/rclone.service /etc/systemd/system
+# remove the comment before line '#user_allow_other' in /etc/fuse.conf
+$> sudo systemctl daemon-reload
+$> sudo systemctl enable rclone.service
+$> sudo systemctl start rclone.service
+```
 
