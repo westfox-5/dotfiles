@@ -10,7 +10,8 @@ $> ln -s $(pwd)/i3 ~/.config/
 ## VIM
 
 ```console
-$> ln -s $(pwd)/vim ~/.config/
+$> ln -s $(pwd)/vim/.vimrc ~/.vim/vimrc
+&> ln -s $(pwd)/vim/.vimrc.plug ~/.vim/
 ```
 
 ### plugins
