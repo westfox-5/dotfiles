@@ -213,10 +213,16 @@ exec --no-startup-id nitrogen --restore
 workspace_layout tabbed
 
 ## Screenshot
-bindsym --release Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh $HOME/Pictures/screenshots/"
-bindsym --release Shift+Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh -r $HOME/Pictures/screenshots/"
-bindsym --release Control+Shift+Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh -r -c $HOME/Pictures/screenshots/"
-bindsym --release Control+Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh -c $HOME/Pictures/screenshots/"
+#bindsym --release Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh $HOME/Pictures/screenshots/"
+#bindsym --release Shift+Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh -r $HOME/Pictures/screenshots/"
+#bindsym --release Control+Shift+Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh -r -c $HOME/Pictures/screenshots/"
+#bindsym --release Control+Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh -c $HOME/Pictures/screenshots/"
+
+bindsym --release $mod+Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh $HOME/Pictures/screenshots/"
+bindsym --release $mod+Shift+Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh -r $HOME/Pictures/screenshots/"
+bindsym --release $mod+Control+Shift+Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh -r -c $HOME/Pictures/screenshots/"
+bindsym --release $mod+Control+Print exec --no-startup-id "$HOME/.config/i3/screenshot.sh -c $HOME/Pictures/screenshots/"
+
 
 for_window [title="Telegram"] floating enable; resize set 640 480;
 
