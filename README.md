@@ -20,6 +20,9 @@ $ vim
 ```console
 $ ln -s $(pwd)/emacs ~/.config/
 $ emacs
+C-x C-c // to exit
+$ ln -s ~/.config/emacs/init.el ~/.emacs.d/
+$ emacs
 // for each plugin missing, install it and restart emacs
 M-x package-install RET <plugin name>
 ```
